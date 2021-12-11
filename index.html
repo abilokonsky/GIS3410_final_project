@@ -27,14 +27,14 @@
 
 
 			// load GeoJSON from an external file
-			var censusblocks;
-			$.getJSON("censusblocks.json",function(data){
+			var buildings;
+			$.getJSON("buildings.json",function(data){
 				// add GeoJSON layer to the map once the file is loaded
-			censusblocks = L.geoJson(data,{
+			buildings = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
-						layer.bindPopup("Number over 80 Years Old: " + feature.properties.POP80_CY +
-						"<br>Number over over 85 Years Old: " +  feature.properties.POP85_CY +
-						"<br>Number of baby boomers: " + feature.properties.BABYBOOMCY);
+						layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
+						"<br>Building Height: " +  feature.properties.BLDG_HEIGH +
+						"<br>Ground Elevation: " + feature.properties.GROUND_ELE);
 					}
 				}).addTo(map);
 			});
