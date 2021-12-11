@@ -27,14 +27,12 @@
 
 
 			// load GeoJSON from an external file
-			var censusblocks;
-			$.getJSON("censusblocks.geojson",function(data){
+			var starbux;
+			$.getJSON("starbux.json",function(data){
 				// add GeoJSON layer to the map once the file is loaded
-			censusblocks = L.geoJson(data,{
+			starbux = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
-						layer.bindPopup("Number over 80 Years Old: " + feature.properties.POP80_CY +
-						"<br>Number over over 85 Years Old: " +  feature.properties.POP85_CY +
-						"<br>Number of baby boomers: " + feature.properties.BABYBOOMCY);
+						layer.bindPopup("Number over 80 Years Old: " + feature.properties.Store_Name);
 					}
 				}).addTo(map);
 			});
