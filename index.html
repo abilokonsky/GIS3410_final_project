@@ -10,9 +10,28 @@
 		html, body { height: 100%; }
 		#map { height: 80%; width: 95%; }
 		#map-title { width: 100%; }
-	  </style>
+	
+	</style>
+	<style type="text/css">
+        body {
+          background-color : black;
+          color: white;
+          padding: 20px;
+          font-family: ComicSans;
+          text-align: center;}
+        p {
+          text=align: left;
+          }
+        h2 {
+          color: DarkCyan;}
+        h3 {
+            color: #ee3e75;}
+        table {
+          color: red;}
+        table {
+          background-color : gray;}
+    </style>
 	  
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
@@ -20,7 +39,7 @@
 	   $(document).ready( function() {
 		// put your javascript here
 		// Create variable to hold map element, give initial settings to map
-		var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 8});
+		var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 12});
 		// Add OpenStreetMap tile layer to map element
 		var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
                       { attribution: '© OpenStreetMap' }).addTo(map);
@@ -46,7 +65,7 @@
 
 <body>
   <!-- our web map content will go here -->
-  <div id="map-title"><h1>My Amazing First Web Map!</h1></div>
+  <div id="map-title"><h1>Where can you find a Starbucks around Denver?</h1></div>
   <div id="map"></div>
 
 </body>
