@@ -27,10 +27,10 @@
 
 
 			// load GeoJSON from an external file
-			var buildings;
+			var censusblk;
 			$.getJSON("censusblocks.json",function(data){
 				// add GeoJSON layer to the map once the file is loaded
-			buildings = L.geoJson(data,{
+			censusblk = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
 						layer.bindPopup("Building Type: " + feature.properties.Percent_Ol);
 		
