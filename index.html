@@ -20,15 +20,12 @@
 	   $(document).ready( function() {
 		// put your javascript here
 		// Create variable to hold map element, give initial settings to map
-		var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 14});
+		var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 8});
 		// Add OpenStreetMap tile layer to map element
 		var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
                       { attribution: '© OpenStreetMap' }).addTo(map);
 
-		var basemaps = { "Default Basemap:": defaultBase };
-		var overlaymaps = { };
-		var layerMenu = L.control.layers(basemaps,overlapmaps).addTo(map);
-
+		
 			// load GeoJSON from an external file
 			var starbux;
 			$.getJSON("starbux.json",function(data){
@@ -38,9 +35,8 @@
 						layer.bindPopup("Starbucks Store: " + feature.properties.Store_Name);
 					}
 				}).addTo(map);
-				layerMenu.addOverlay(starbux, "Starbucks");
 			});
-			
+
 
 		});
 
