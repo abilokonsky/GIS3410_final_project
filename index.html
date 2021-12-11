@@ -32,8 +32,9 @@
 				// add GeoJSON layer to the map once the file is loaded
 			censusblk = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
-						layer.bindPopup("Building Type: " + feature.properties.Percent_Ol);
-		
+						layer.bindPopup("Number over 80 Years Old: " + feature.properties.POP80_CY +
+						"<br>Number over over 85 Years Old: " +  feature.properties.POP85_CY +
+						"<br>Number of baby boomers: " + feature.properties.BABYBOOMCY);
 					}
 				}).addTo(map);
 			});
