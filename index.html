@@ -25,6 +25,9 @@
 		var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
                       { attribution: '© OpenStreetMap' }).addTo(map);
 
+		var basemaps = { "Default Basemap:": defaultBase };
+		var overlaymaps = { };
+		var layerMenu = L.control.layers(basemaps,overlapmaps).addTo(map);
 
 			// load GeoJSON from an external file
 			var starbux;
@@ -32,11 +35,11 @@
 				// add GeoJSON layer to the map once the file is loaded
 			starbux = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
-						layer.bindPopup("Number over 80 Years Old: " + feature.properties.Store_Name);
+						layer.bindPopup("Starbucks Store: " + feature.properties.Store_Name);
 					}
 				}).addTo(map);
 			});
-
+			layerMenu.addOverlay(starbux, "Starbucks");
 
 		});
 
