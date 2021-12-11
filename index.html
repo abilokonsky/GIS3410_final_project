@@ -28,7 +28,7 @@
 
 			// load GeoJSON from an external file
 			var censusblocks;
-			$.getJSON("censusblocks.json",function(data){
+			$.getJSON("censusblocks.geojson",function(data){
 				// add GeoJSON layer to the map once the file is loaded
 			censusblocks = L.geoJson(data,{
 					onEachFeature: function (feature, layer) {
