@@ -20,9 +20,7 @@ var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 14});
     // Add OpenStreetMap tile layer to map element
 var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
                       { attribution: '© OpenStreetMap' }).addTo(map);
-					  var basemaps = {"Default Basemap:": defaultBase};
-var overlaymaps = { };
-var layerMenu = L.control.layers(basemaps, overlapmaps).addTo(map);
+
 </script>
 
 
