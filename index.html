@@ -38,8 +38,9 @@
 						layer.bindPopup("Starbucks Store: " + feature.properties.Store_Name);
 					}
 				}).addTo(map);
+				layerMenu.addOverlay(starbux, "Starbucks");
 			});
-			layerMenu.addOverlay(starbux, "Starbucks");
+			
 
 		});
 
